@@ -6,7 +6,7 @@ int print(int *arr,int n){
     }
     cout<<endl;
 }
-
+// Large element come to end by swapping with adjacent
 void bobble_sort(int *arr, int n){
 
     for(int i=0;i<n-1;i++){
@@ -17,14 +17,14 @@ void bobble_sort(int *arr, int n){
                 isSwap=true;
             } 
         }   
-        // if(!isSwap){
+        // if(isSwap == false){
         //     return;
         // }
     }
     print(arr,n);
 }
 int main(){
-    int arr[5] = {2,5,3,1,4};
-    int n=5;
+    int arr[] = {2,5,3,1,4,234,4345,22,11,3,32,54,221,32,53,34,23,23};
+    int n= sizeof(arr) / sizeof(int);
     bobble_sort(arr,n);
 }

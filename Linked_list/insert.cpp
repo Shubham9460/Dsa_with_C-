@@ -117,11 +117,31 @@ public:
 
         prev=curr;
         curr = next;
-
-
     }
     head = prev;
    }
+   //Get size an LinkedList
+   int getsize(){
+    int size=0;
+    Node* temp = head;
+    while(temp != NULL){
+        temp = temp->next;
+        size++;
+    }
+    return size;
+   }
+   //Remove revers side to Nth number
+   void removeNth(int n){
+    int size = getsize();
+    Node* prev = head;
+    for(int i= 1; i<(size-n);i++){
+        prev = prev->next;
+    }
+    Node* toDel = prev->next;
+    cout<<toDel->data<<endl;
+    prev->next = prev->next->next;
+   }
+   
 };
 
 int main(){
@@ -132,7 +152,7 @@ ll.push_front(3);
 ll.push_front(2);
 ll.push_front(1);
 ll.printList();
-ll.revers();
+ll.removeNth(2);
 ll.printList();
 
 

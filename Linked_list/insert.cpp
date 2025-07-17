@@ -107,6 +107,21 @@ public:
     }
     return -1;
    }
+// revers a linkedList
+   void revers(){
+    Node* curr = head;
+    Node* prev = NULL;
+    while(curr != NULL){
+        Node* next = curr->next;
+        curr->next = prev;
+
+        prev=curr;
+        curr = next;
+
+
+    }
+    head = prev;
+   }
 };
 
 int main(){
@@ -117,8 +132,8 @@ ll.push_front(3);
 ll.push_front(2);
 ll.push_front(1);
 ll.printList();
-cout<<ll.searchIdx(4)<<" ";
-
+ll.revers();
+ll.printList();
 
 
 
